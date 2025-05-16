@@ -39,6 +39,81 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+
+  
+    
+  <!-- aplayer 音频 start -->
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const aplayer = document.querySelectorAll(".aplayer-box");
+      aplayer && initaplayer(aplayer);
+      function initaplayer(els) {
+        let elsArr = Array.from(els);
+        elsArr.forEach(el => {
+            let params = {
+              container: el,
+              audio: { ...el.dataset },
+              theme: "#b7daff",
+              autoplay: true,
+              loop: false,
+              mutex: true,
+            }
+            if (el.dataset.lrc) {
+              params['lrcType'] = 3
+            }
+            ap = new APlayer(params);
+            // console.log(params)
+        });
+        }
+    })
+    </script>
+  <!-- aplayer 音频 end -->
+  
+  
+
+  
+    
+<!-- dplayer 视频 start -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/hls.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    const dplayer = document.querySelectorAll(".dplayer-box");
+    // console.log(dplayer);
+    dplayer && initDPlayer(dplayer);
+    function initDPlayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        let url = el.dataset.url;
+        let pic = el.dataset.pic;
+        let subtitle = el.dataset.subtitle;
+
+        let options = {
+          container: el,
+          video: { url: url, pic: pic },
+          theme: "#b7daff",
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        }
+
+        if (subtitle) {
+          options.subtitle = {
+            url: el.dataset.subtitle,
+          }
+        }
+        dp = new DPlayer(options);
+        // console.log(dp);
+      });
+    }
+  })
+</script>
+<!-- dplayer 视频 end -->
+
+  
 </head>
 <body>
   <div class="root-container">
@@ -118,6 +193,39 @@
       <div class="article-item layout-padding">
         <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
           
+            <div class="card-cover" background-image-lazy data-img="https://pic.rmb.bdstatic.com/bjh/240608/4f12af6fade484aa549c50f1c2557f454310.jpeg@h_1280"></div>
+          
+
+          <div class="card-text">
+            
+              <a href="/2025/05/17/%E9%9F%B3%E8%A7%86%E9%A2%91%E5%B5%8C%E5%85%A5%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/" itemprop="url">
+                <h2 class="card-text--title">音视频配置方法</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2025-05-16T16:00:00.000Z" itemprop="datePublished">2025-05-17</time>
+            </div>
+            
+            <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E6%95%99%E7%A8%8B/">📒 教程</a></li>
+    
+</ul>
+            <ul class="wrap-list dark">
+  
+    <li><a href="/tags/APlayer/">🏷️ APlayer</a></li>
+  
+    <li><a href="/tags/DPlayer/">🏷️ DPlayer</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
             <div class="card-cover" background-image-lazy data-img="https://pica.zhimg.com/v2-f332c751a9c96e16471e3ee594d978d5_r.jpg?source=2c26e567"></div>
           
 
@@ -129,8 +237,13 @@
             
             <div class="card-text--row">
               <span>发布于</span>
-              <time  class="article-date" datetime="2025-05-16T04:00:00.000Z" itemprop="datePublished">2025-05-16</time>
+              <time  class="article-date" datetime="2025-05-16T08:00:00.000Z" itemprop="datePublished">2025-05-16</time>
             </div>
+            
+              <div class="last-time">
+                <span>更新于</span>
+                <time  class="article-updated" datetime="2025-05-16T18:31:32.860Z" itemprop="dateUpdated">2025-05-17</time>
+              </div>
             
             <ul class="wrap-list dark">
   
@@ -184,6 +297,8 @@
       <div class="article-item layout-padding">
         <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
           
+            <div class="card-cover" background-image-lazy data-img="https://img1.baidu.com/it/u=3044834731,1669776139&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500"></div>
+          
 
           <div class="card-text">
             
@@ -198,13 +313,13 @@
             
               <div class="last-time">
                 <span>更新于</span>
-                <time  class="article-updated" datetime="2025-05-12T14:41:38.360Z" itemprop="dateUpdated">2025-05-12</time>
+                <time  class="article-updated" datetime="2025-05-16T18:29:03.345Z" itemprop="dateUpdated">2025-05-17</time>
               </div>
             
-            <ul class="wrap-list light">
+            <ul class="wrap-list dark">
   
 </ul>
-            <ul class="wrap-list light">
+            <ul class="wrap-list dark">
   
 </ul>
           </div>
