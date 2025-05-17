@@ -314,7 +314,6 @@ dfn {
 }
 .theme-light .page-title {
   height: 45px;
-  overflow-x: auto; /* 允许水平滚动 */
   position: absolute;
   width: 100%;
   max-width: var(--layout-max-width);
@@ -326,11 +325,9 @@ dfn {
   border-bottom: 2px solid #d9d9d9;
   background-color: #fff;
   font-family: Georgia, Times New Roman, Times, Songti SC, serif;
-  white-space: nowrap; /* 确保内容在一行内 */
 }
 .theme-dark .page-title {
   height: 45px;
-  overflow-x: auto; /* 允许水平滚动 */
   position: relative;
   width: 100%;
   max-width: var(--layout-max-width);
@@ -342,8 +339,6 @@ dfn {
   border-bottom: 2px solid #656565;
   background-color: #303030;
   font-family: Georgia, Times New Roman, Times, Songti SC, serif;
-  white-space: nowrap; /* 确保内容在一行内 */
-  padding: 0;
 }
 .page-title ul {
   list-style: none;
@@ -352,7 +347,6 @@ dfn {
 }
 .page-title li {
   display: inline-block;
-  white-space: nowrap; /* 确保li在一行内 */
 }
 .theme-light .page-title li a {
   color: #333;
@@ -389,10 +383,6 @@ dfn {
   height: 43px;
   margin-bottom: -2px;
   border-bottom: 2px solid #c3c0c0;
-}
-/* 隐藏滚动条 */
-.page-title::-webkit-scrollbar {
-  display: none; /* 隐藏Webkit浏览器的滚动条 */
 }
 .back-to-top-fixed {
   position: fixed;
