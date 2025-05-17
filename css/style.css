@@ -348,9 +348,11 @@ dfn {
   list-style: none;
   margin: 0;
   padding: 0 0 0 20px;
+  display: inline-block;
 }
 .page-title li {
   display: inline-block;
+  white-space: nowrap; /* 确保li在一行内 */
 }
 .theme-light .page-title li a {
   color: #333;
