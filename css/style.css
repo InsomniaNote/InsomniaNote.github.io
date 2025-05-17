@@ -328,7 +328,7 @@ dfn {
 }
 .theme-dark .page-title {
   height: 45px;
-  position: relative;
+  position: absolute;
   width: 100%;
   max-width: var(--layout-max-width);
   margin-left: auto;
