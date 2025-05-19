@@ -160,7 +160,27 @@
 
 .hbe-input-label-default::before {
 	height: 70%;
-	background: #ede2ea;
+	background: linear-gradient(to right, #48aff5 0%, #ca62d5 100%);
+	top: 0;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+.theme-light .hbe-input-label-default::before {
+	height: 70%;
+	background: linear-gradient(to right, #48aff5 0%, #ca62d5 100%);
+	top: 0;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+.theme-dark .hbe-input-label-default::before {
+	height: 70%;
+	background: linear-gradient(to right, #e54e4e 0%, #62d5ce 100%);
 	top: 0;
 	-webkit-transform: translate3d(0, -100%, 0);
 	transform: translate3d(0, -100%, 0);
