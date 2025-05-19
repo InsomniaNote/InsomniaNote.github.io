@@ -67,7 +67,35 @@
             // console.log(params)
         });
         }
-    })
+    });
+
+    // 监听密码正确事件
+    document.addEventListener('password-verified', function(event) {
+      console.log("触发密码验证事件aplayer");
+      setTimeout(function () {
+        console.log("查找aplayer");
+        const aplayer = document.querySelectorAll(".aplayer-box");
+        aplayer && initaplayer(aplayer);
+        function initaplayer(els) {
+          let elsArr = Array.from(els);
+          elsArr.forEach(el => {
+            let params = {
+              container: el,
+              audio: { ...el.dataset },
+              theme: "#b7daff",
+              autoplay: true,
+              loop: false,
+              mutex: true,
+            }
+            if (el.dataset.lrc) {
+              params['lrcType'] = 3
+            }
+            ap = new APlayer(params);
+            // console.log(params)
+          });
+        }
+      }, 1)
+    });
     </script>
   <!-- aplayer 音频 end -->
   
@@ -109,7 +137,42 @@
         // console.log(dp);
       });
     }
-  })
+  });
+
+  // 监听密码正确事件
+  document.addEventListener('password-verified', function () {
+    console.log("触发密码验证事件dplayer");
+    setTimeout(function () {
+      const dplayer = document.querySelectorAll(".dplayer-box");
+      console.log("查找dplayer");
+      dplayer && initDPlayer(dplayer);
+      function initDPlayer(els) {
+        let elsArr = Array.from(els);
+        elsArr.forEach(el => {
+          let url = el.dataset.url;
+          let pic = el.dataset.pic;
+          let subtitle = el.dataset.subtitle;
+
+          let options = {
+            container: el,
+            video: { url: url, pic: pic },
+            theme: "#b7daff",
+            autoplay: false,
+            loop: false,
+            mutex: true,
+          }
+
+          if (subtitle) {
+            options.subtitle = {
+              url: el.dataset.subtitle,
+            }
+          }
+          dp = new DPlayer(options);
+          // console.log(dp);
+        });
+      }
+    }, 1);
+  });
 </script>
 <!-- dplayer 视频 end -->
 
@@ -197,11 +260,15 @@
           
           
           <li class="">
-              <a href="/categories/科技" data-name="数智科技">数智科技</a>
+              <a href="/categories/浪漫记录" data-name="浪漫记录">浪漫记录</a>
           </li>
           
           <li class="">
-              <a href="/categories/人文" data-name="人文生活">人文生活</a>
+              <a href="/categories/数智科技" data-name="数智科技">数智科技</a>
+          </li>
+          
+          <li class="">
+              <a href="/categories/人文生活" data-name="人文生活">人文生活</a>
           </li>
           
           <li class="">
@@ -209,7 +276,7 @@
           </li>
           
           <li class="">
-              <a href="/categories/产品" data-name="产品研发">产品研发</a>
+              <a href="/categories/产品研发" data-name="产品研发">产品研发</a>
           </li>
           
           <li class="">
@@ -238,12 +305,12 @@
             
               <div class="last-time">
                 <span>更新于</span>
-                <time  class="article-updated" datetime="2025-05-17T12:23:56.405Z" itemprop="dateUpdated">2025-05-17</time>
+                <time  class="article-updated" datetime="2025-05-19T09:38:21.289Z" itemprop="dateUpdated">2025-05-19</time>
               </div>
             
             <ul class="wrap-list dark">
   
-    <li><a href="/categories/%E4%BA%BA%E6%96%87/">📒 人文</a></li>
+    <li><a href="/categories/%E4%BA%BA%E6%96%87%E7%94%9F%E6%B4%BB/">📒 人文生活</a></li>
     
 </ul>
             <ul class="wrap-list dark">
@@ -274,6 +341,12 @@
         
       
         
+          <a href="https://www.zhihu.com/people/jian-jian-69-84" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg t="1587373160860" class="icon icon-zhihu" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z"></path>
+</svg>
+          </a>
+        
       
         
       
@@ -285,12 +358,6 @@
           </a>
         
       
-        
-          <a href="https://twitter.com/guanquanhong" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
-            <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
-</svg>
-          </a>
         
       
     </div>
